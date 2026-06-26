@@ -1,0 +1,36 @@
+﻿<Window x:Class="chatbot_ai.QuizWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cybersecurity Quiz" Height="500" Width="600"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Cybersecurity Knowledge Quiz" FontSize="18" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+        <Grid Grid.Row="1" Margin="0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="ScoreDisplay" Text="Score: 0 / 0" FontSize="14" FontWeight="SemiBold"/>
+            <TextBlock x:Name="ProgressDisplay" Grid.Column="1" Text="Question 1 of 12" FontSize="14" 
+                       HorizontalAlignment="Right"/>
+        </Grid>
+
+        <TextBlock x:Name="QuestionDisplay" Grid.Row="2" Text="Loading question..." FontSize="16" 
+                   TextWrapping="Wrap" Margin="0,10,0,10" FontWeight="SemiBold"/>
+
+        <StackPanel x:Name="OptionsPanel" Grid.Row="3" Margin="0,5"/>
+
+        <Button x:Name="SubmitButton" Grid.Row="4" Content="Submit Answer" Height="40" 
+                Click="SubmitButton_Click" Margin="0,10,0,0" IsDefault="True"/>
+    </Grid>
+</Window>

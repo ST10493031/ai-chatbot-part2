@@ -1,0 +1,66 @@
+﻿<Window x:Class="chatbot_ai.TaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Task Manager" Height="450" Width="500"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Cybersecurity Task Manager" FontSize="18" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+        <Grid Grid.Row="1" Margin="0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Title:" VerticalAlignment="Center"/>
+            <TextBox x:Name="TitleBox" Grid.Column="1" Height="30" VerticalContentAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Description:" VerticalAlignment="Top" Margin="0,5,0,0"/>
+            <TextBox x:Name="DescBox" Grid.Column="1" Height="60" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+        </Grid>
+
+        <Grid Grid.Row="3" Margin="0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Reminder:" VerticalAlignment="Center"/>
+            <DatePicker x:Name="ReminderPicker" Grid.Column="1" Height="30"/>
+            <Button x:Name="AddTaskButton" Grid.Column="2" Content="Add Task" Width="80" Height="30" 
+                    Click="AddTaskButton_Click" Margin="10,0,0,0"/>
+        </Grid>
+
+        <ListBox x:Name="TaskList" Grid.Row="4" Margin="0,10" 
+                 DisplayMemberPath="DisplayText" Background="White" BorderBrush="Gray" BorderThickness="1"/>
+
+        <Grid Grid.Row="5" Margin="0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="CompleteButton" Grid.Column="0" Content="Mark Complete" Height="30" 
+                    Click="CompleteButton_Click" Margin="0,0,5,0"/>
+            <Button x:Name="DeleteButton" Grid.Column="1" Content="Delete Task" Height="30" 
+                    Click="DeleteButton_Click" Margin="5,0,5,0"/>
+            <Button x:Name="CloseButton" Grid.Column="2" Content="Close" Height="30" 
+                    Click="CloseButton_Click" Margin="5,0,0,0"/>
+        </Grid>
+    </Grid>
+</Window>
